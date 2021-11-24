@@ -11,14 +11,10 @@ class Main {
 
   public static void initWords() {
     defaultWords = new ArrayList<String>(); // initialize an ArrayList and fill it with words
-    //defaultWords.add("Hi");
-    //defaultWords.add("Word");
-    //defaultWords.add("Idk");
-    //defaultWords.add("Cool");
     defaultWords.add("AaBbCcDd");
     defaultWords.add("two words");
     defaultWords.add("supercalifragilisticexpialidocious");
-    defaultWords.add("this has numbers54174185");
+    defaultWords.add("Coruscant");
 
     for (int i = 1; i <= defaultWords.size(); i++) {
       boolean invalidChars = false;
@@ -61,6 +57,7 @@ class Main {
     wordLetters.clear(); // reset letters ArrayList
     guessedLetters.clear();
     chosenWord = defaultWords.get(rand.nextInt(defaultWords.size())); // pick a random word
+    System.out.println("All words are lowercase and do not contain numbers or special characters");
 
     //System.out.println(chosenWord); // print it for debug
 
@@ -80,7 +77,7 @@ class Main {
 
       System.out.println(printWord()); // print current guesses
 
-      System.out.println("Guess a letter (all letters are lowercase and do not contain numbers or special characters)"); // prompts guess
+      System.out.println("Guess a letter"); // prompts guess
       guessStr = scan.nextLine(); // get guess
       if (!guessStr.equals("")) { // checks if the string is not empty
         guessChar = guessStr.charAt(0); // get first letter (the letter to guess)
